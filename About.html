@@ -53,35 +53,7 @@
             c5.5,0,9.9,4.5,9.9,9.9V73.3z"></path></svg></span>
           </a>
         </div>
-        <nav class="u-align-left u-menu u-menu-hamburger u-offcanvas u-menu-1" data-responsive-from="XL" role="navigation">
-          <div class="menu-collapse" style="font-size: 1rem;">
-            <a class="u-button-style u-hamburger-link u-nav-link" href="#" tabindex="-1" aria-label="Open menu" aria-controls="1f5d">
-              <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 302 302" style=""><use xlink:href="#svg-8a8f"></use></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg-8a8f" x="0px" y="0px" viewBox="0 0 302 302" style="enable-background:new 0 0 302 302;" xml:space="preserve" class="u-svg-content"><g><rect y="36" width="302" height="30"></rect><rect y="236" width="302" height="30"></rect><rect y="136" width="302" height="30"></rect>
-</g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
-            </a>
-          </div>
-          <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-spacing-2 u-unstyled u-nav-1" role="menubar"><li class="u-nav-item" role="none"><a class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="./" style="padding: 10px 20px;" role="menuitem">Home</a>
-</li><li class="u-nav-item" role="none"><a class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="About.html" style="padding: 10px 20px;" role="menuitem">About Studio</a>
-</li><li class="u-nav-item" role="none"><a class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="Portfolio-Page.html" style="padding: 10px 20px;" role="menuitem">Our Projects</a>
-</li><li class="u-nav-item" role="none"><a class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="Landing.html" style="padding: 10px 20px;" role="menuitem">Landing</a>
-</li></ul>
-          </div>
-          <div class="u-custom-menu u-nav-container-collapse" id="1f5d" role="region" aria-label="Menu panel">
-            <div class="u-align-center u-black u-container-align-center u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close" tabindex="-1" aria-label="Close menu"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="./">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html">About Studio</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Portfolio-Page.html">Our Projects</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Landing.html">Landing</a>
-</li></ul>
-              </div>
-            </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-          </div>
-        </nav>
+        <div id="navbar"></div>
       </div></header> 
     <section class="u-align-center u-clearfix u-container-align-center u-palette-1-light-1 u-section-1" id="carousel_8333">
       <div class="u-clearfix u-sheet u-sheet-1">
@@ -382,5 +354,13 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div></footer>
     <section class="u-backlink u-clearfix u-grey-80"></section>
+
+    <script>
+      fetch('Components/navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+    </script>
   
 </body></html>

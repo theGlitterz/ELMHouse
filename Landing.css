@@ -471,6 +471,12 @@
   padding: 20px;
 }
 
+.view-more-btn {
+  display: block;
+  margin: 30px auto 0 auto;
+  width: fit-content;
+}
+
 @media (max-width: 1199px) {
   .u-section-3 .u-sheet-1 {
     min-height: 631px;

@@ -432,6 +432,19 @@
   margin: -190px 0 0 256px;
 }
 
+.u-section-3 .u-text-description {
+  --animation-custom_in-translate_x: 300px;
+  --animation-custom_in-translate_y: 0px;
+  --animation-custom_in-opacity: 0;
+  --animation-custom_in-rotate: 0deg;
+  --animation-custom_in-scale: 1;
+  font-size: 1.5rem;
+  margin-top: auto;
+  margin-bottom: 0px;
+  margin-left: 256px;
+  margin-right: 0px;
+}
+
 .u-section-3 .u-gallery-1 {
   height: 362px;
   margin-top: 87px;
@@ -471,6 +484,10 @@
     width: auto;
     margin-left: 224px;
   }
+  .u-section-3 .u-text-description {
+    width: auto;
+    margin-left: 224px;
+  }
 
   .u-section-3 .u-gallery-1 {
     height: 298px;
@@ -487,6 +504,9 @@
   }
 
   .u-section-3 .u-text-2 {
+    margin-left: 222px;
+  }
+  .u-section-3 .u-text-description {
     margin-left: 222px;
   }
 
@@ -511,6 +531,12 @@
   }
 
   .u-section-3 .u-text-2 {
+    font-size: 2.25rem;
+    margin-top: -111px;
+    margin-left: 130px;
+  }
+
+  .u-section-3 .u-text-description {
     font-size: 2.25rem;
     margin-top: -111px;
     margin-left: 130px;
@@ -546,6 +572,12 @@
     margin-top: 30px;
     margin-left: 0;
   }
+
+  .u-section-3 .u-text-description {
+    font-size: 1.875rem;
+    margin-top: 30px;
+    margin-left: 0;
+  }  
 
   .u-section-3 .u-gallery-1 {
     height: 970px;
@@ -849,6 +881,19 @@
   margin: -190px 256px 0 0;
 }
 
+.u-section-5 .u-text-description {
+  --animation-custom_in-translate_x: -300px;
+  --animation-custom_in-translate_y: 0px;
+  --animation-custom_in-opacity: 0;
+  --animation-custom_in-rotate: 0deg;
+  --animation-custom_in-scale: 1;
+  font-size: 1.5rem;
+  margin-top: auto;
+  margin-right: 256px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
 .u-section-5 .u-gallery-1 {
   height: 362px;
   margin-top: 86px;
@@ -889,6 +934,11 @@
     margin-right: 224px;
   }
 
+  .u-section-5 .u-text-description {
+    width: auto;
+    margin-right: 224px;
+  }
+
   .u-section-5 .u-gallery-1 {
     height: 298px;
     margin-top: 87px;
@@ -905,6 +955,10 @@
   }
 
   .u-section-5 .u-text-2 {
+    margin-right: 222px;
+  }
+
+  .u-section-5 .u-text-description {
     margin-right: 222px;
   }
 
@@ -929,6 +983,12 @@
   }
 
   .u-section-5 .u-text-2 {
+    font-size: 2.25rem;
+    margin-top: -111px;
+    margin-right: 130px;
+  }
+
+  .u-section-5 .u-text-description {
     font-size: 2.25rem;
     margin-top: -111px;
     margin-right: 130px;
@@ -962,6 +1022,12 @@
   }
 
   .u-section-5 .u-text-2 {
+    font-size: 1.875rem;
+    margin-top: 18px;
+    margin-right: 0;
+  }
+
+  .u-section-5 .u-text-description {
     font-size: 1.875rem;
     margin-top: 18px;
     margin-right: 0;

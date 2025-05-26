@@ -6,9 +6,11 @@
     <meta name="description" content="">
     <title>ELM House</title>
     <link rel="stylesheet" href="elmhouse.css" media="screen">
-<link rel="stylesheet" href="Landing.css" media="screen">
+    <link rel="stylesheet" href="Landing.css" media="screen">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="elmhouse.js" defer=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
     <meta name="referrer" content="origin">
     
@@ -249,7 +251,46 @@
       </div>
     </section>
 
-    <section class="u-align-center u-clearfix u-container-align-center u-section-4" id="carousel_e54f">
+
+
+    <section class="u-clearfix u-grey-10 u-section-8" id="carousel_b9a8">
+      <div class="u-shape u-shape-rectangle u-white u-shape-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750"></div>
+      <div class="u-expanded-width u-shape u-shape-rectangle u-white u-shape-2" data-animation-name="customAnimationIn" data-animation-duration="1500"></div>
+      <img class="u-image u-image-default u-image-1" data-image-width="1380" data-image-height="934" src="images/view-modern-entryway-with-interi.jpg" data-animation-name="flipIn" data-animation-duration="1750" data-animation-delay="500" data-animation-direction="X">
+      <img class="u-image u-image-2" src="images/minimalist-modern-vases-books-ar.jpg" data-image-width="740" data-image-height="1110" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
+      <div class="u-align-left u-container-align-left u-container-style u-group u-white u-group-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">
+        <div class="u-container-layout u-valign-middle u-container-layout-1"><span class="u-file-icon u-icon u-text-palette-1-base u-icon-1"><img src="images/4338295-ff984290.png" alt=""></span>
+          <div class="swiper text-swiper swiper-fade">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <p class="u-align-left u-text u-text-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""> 1. Our interior design concepts include suggestions for furniture, lighting, color, fabric and materials for floors, walls and windows.</p>
+                <p class="u-align-left u-text u-text-2">Images from <a href="https://www.freepik.com/photos/sports" class="u-border-1 u-border-active-palette-1-base u-border-black u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-btn u-button-link u-button-style u-text-body-color u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Freepik</a>
+                </p>
+              </div>
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <p class="u-align-left u-text u-text-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""> 2. Our interior design concepts include suggestions for furniture, lighting, color, fabric and materials for floors, walls and windows.</p>
+                <p class="u-align-left u-text u-text-2">Images from <a href="https://www.freepik.com/photos/sports" class="u-border-1 u-border-active-palette-1-base u-border-black u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-btn u-button-link u-button-style u-text-body-color u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Freepik</a>
+                </p>
+              </div>
+              <!-- Slide 3 -->
+              <div class="swiper-slide">
+                <p class="u-align-left u-text u-text-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""> 3. Our interior design concepts include suggestions for furniture, lighting, color, fabric and materials for floors, walls and windows.</p>
+                <p class="u-align-left u-text u-text-2">Images from <a href="https://www.freepik.com/photos/sports" class="u-border-1 u-border-active-palette-1-base u-border-black u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-btn u-button-link u-button-style u-text-body-color u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Freepik</a>
+                </p>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- <section class="u-align-center u-clearfix u-container-align-center u-section-4" id="carousel_e54f">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <h2 class="u-align-center u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">Latest Projects</h2>
         <p class="u-align-center u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">Phasellus scelerisque sed leo quis gravida. Fusce lobortis libero ut arcu blandit pharetra.</p>
@@ -302,7 +343,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="u-align-center u-clearfix u-container-align-center u-valign-middle-xs u-white u-section-6" id="carousel_a08f">
       <div class="u-expanded-width u-palette-1-light-1 u-shape u-shape-rectangle u-shape-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250" data-animation-direction="Up"></div>
@@ -359,7 +400,25 @@
         .then(data => {
           document.getElementById('footer').innerHTML = data;
       });
+      document.addEventListener('DOMContentLoaded', function () {
+        const swiper = new Swiper('.text-swiper', {
+          loop: true,
+          effect: 'fade', // Enables fade animation
+          fadeEffect: {
+            crossFade: true,
+          },
+          autoplay: {
+            delay: 5000, // Longer duration for visible fade
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        });
+      });
     </script>
+
 <a href="https://wa.me/353860796566" class="whatsapp-float" target="_blank" rel="noopener">
   <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="WhatsApp" />
 

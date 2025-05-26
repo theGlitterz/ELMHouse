@@ -1266,4 +1266,306 @@
     margin-top: 20px;
     margin-bottom: -261px;
   }
+} .u-section-8 {
+  background-image: none;
+  min-height: 1162px;
+}
+
+.u-section-8 .u-shape-1 {
+  height: 506px;
+  width: 359px;
+  --animation-custom_in-translate_x: -500px;
+  --animation-custom_in-translate_y: 0px;
+  --animation-custom_in-opacity: 0;
+  --animation-custom_in-rotate: 0deg;
+  --animation-custom_in-scale: 1;
+  margin: 496px calc(((100% - 1140px) / 2)) 0 auto;
+}
+
+.u-section-8 .u-shape-2 {
+  height: 299px;
+  margin-top: -1002px;
+  margin-bottom: 0;
+  --animation-custom_in-translate_x: 0px;
+  --animation-custom_in-translate_y: -300px;
+  --animation-custom_in-opacity: 0;
+  --animation-custom_in-rotate: 0deg;
+  --animation-custom_in-scale: 1;
+}
+
+.u-section-8 .u-image-1 {
+  height: 595px;
+  width: 843px;
+  object-position: 45.65% 50%;
+  margin: -299px auto 0 calc(((100% - 1140px) / 2));
+}
+
+.u-section-8 .u-image-2 {
+  width: 470px;
+  height: 534px;
+  --animation-custom_in-translate_x: 300px;
+  --animation-custom_in-translate_y: 0px;
+  --animation-custom_in-opacity: 0;
+  --animation-custom_in-rotate: 0deg;
+  --animation-custom_in-scale: 1;
+  margin: -185px calc(((100% - 1140px) / 2)  + 67px) 0 auto;
+}
+
+.u-section-8 .u-group-1 {
+  min-height: 462px;
+  width: 670px;
+  height: auto;
+  --animation-custom_in-translate_x: 0px;
+  --animation-custom_in-translate_y: 300px;
+  --animation-custom_in-opacity: 0;
+  --animation-custom_in-rotate: 0deg;
+  --animation-custom_in-scale: 1;
+  margin: -280px auto 60px calc(((100% - 1140px) / 2));
+}
+
+.u-section-8 .u-container-layout-1 {
+  padding: 30px 40px;
+}
+
+.u-section-8 .u-icon-1 {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 0 0;
+}
+
+.u-section-8 .u-text-1 {
+  font-size: 1.875rem;
+  margin: 10px 0 0;
+}
+
+.u-section-8 .u-text-2 {
+  margin: 22px 0 0;
+}
+
+.u-section-8 .u-btn-1 {
+  border-style: solid;
+  padding: 0;
+}
+
+@media (max-width: 1199px) {
+   .u-section-8 {
+    min-height: 1221px;
+  }
+
+  .u-section-8 .u-shape-1 {
+    height: 497px;
+    width: 341px;
+    margin-top: 505px;
+    margin-right: calc(((100% - 940px) / 2));
+  }
+
+  .u-section-8 .u-image-1 {
+    height: 530px;
+    width: 735px;
+    margin-left: calc(((100% - 940px) / 2));
+    --animation-custom_in-translate_x: 300px;
+    --animation-custom_in-translate_y: 0px;
+    --animation-custom_in-opacity: 0;
+    --animation-custom_in-rotate: 0deg;
+    --animation-custom_in-scale: 1;
+  }
+
+  .u-section-8 .u-image-2 {
+    width: 435px;
+    height: 519px;
+    margin-top: -105px;
+    margin-right: calc(((100% - 940px) / 2)  + 67px);
+  }
+
+  .u-section-8 .u-group-1 {
+    width: 559px;
+    margin-left: calc(((100% - 940px) / 2));
+    height: auto;
+  }
+}
+
+@media (max-width: 991px) {
+   .u-section-8 {
+    min-height: 1198px;
+  }
+
+  .u-section-8 .u-shape-1 {
+    height: 387px;
+    margin-top: 392px;
+    margin-right: calc(((100% - 720px) / 2));
+  }
+
+  .u-section-8 .u-shape-2 {
+    margin-top: -779px;
+  }
+
+  .u-section-8 .u-image-1 {
+    height: 402px;
+    width: 613px;
+    margin-left: calc(((100% - 720px) / 2));
+  }
+
+  .u-section-8 .u-image-2 {
+    width: 382px;
+    height: 455px;
+    margin-top: -133px;
+    margin-right: calc(((100% - 720px) / 2)  + 51px);
+  }
+
+  .u-section-8 .u-group-1 {
+    width: 472px;
+    margin-top: -91px;
+    margin-left: calc(((100% - 720px) / 2));
+  }
+
+  .u-section-8 .u-container-layout-1 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+   .u-section-8 {
+    min-height: 1188px;
+  }
+
+  .u-section-8 .u-shape-1 {
+    margin-right: calc(((100% - 540px) / 2));
+  }
+
+  .u-section-8 .u-shape-2 {
+    height: 261px;
+  }
+
+  .u-section-8 .u-image-1 {
+    height: 354px;
+    width: 540px;
+    margin-top: -261px;
+    margin-left: auto;
+  }
+
+  .u-section-8 .u-image-2 {
+    width: 315px;
+    height: 404px;
+    margin-top: -33px;
+    margin-right: calc(((100% - 540px) / 2)  + 51px);
+  }
+
+  .u-section-8 .u-group-1 {
+    margin-top: -92px;
+    margin-left: calc(((100% - 540px) / 2));
+  }
+}
+
+@media (max-width: 575px) {
+   .u-section-8 {
+    min-height: 1057px;
+  }
+
+  .u-section-8 .u-shape-1 {
+    height: 263px;
+    width: 227px;
+    margin-top: 301px;
+    margin-right: calc(((100% - 340px) / 2));
+  }
+
+  .u-section-8 .u-shape-2 {
+    height: 152px;
+    margin-top: -564px;
+  }
+
+  .u-section-8 .u-image-1 {
+    height: 252px;
+    width: 340px;
+    margin-top: -152px;
+  }
+
+  .u-section-8 .u-image-2 {
+    width: 243px;
+    height: 312px;
+    margin-top: -40px;
+    margin-right: calc(((100% - 340px) / 2)  + 38px);
+  }
+
+  .u-section-8 .u-group-1 {
+    width: 340px;
+    margin-top: 74px;
+    margin-left: auto;
+  }
+
+  .u-section-8 .u-container-layout-1 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+} /* Text Carousel Base Styles */
+.text-swiper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  min-height: 120px;
+}
+
+.text-swiper .swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.text-swiper .swiper-slide {
+  text-align: center;
+  font-size: 1.25rem;
+  color: #333;
+  padding: 10px;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Pagination dots */
+.text-swiper .swiper-pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.text-swiper .swiper-pagination-bullet {
+  background: #555;
+  opacity: 0.5;
+  margin: 0 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.text-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #000;
+}
+
+.text-swiper {
+  position: relative;
+  height: auto;
+  min-height: 150px; /* Adjust depending on content */
+  overflow: hidden;
+}
+
+.text-swiper .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.text-swiper .swiper-slide.swiper-slide-active {
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .text-swiper .swiper-slide {
+    font-size: 1rem;
+  }
+
+  .text-swiper {
+    padding: 30px 10px;
+  }
 }

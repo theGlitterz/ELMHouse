@@ -1497,7 +1497,8 @@
     padding-left: 20px;
     padding-right: 20px;
   }
-} /* Text Carousel Base Styles */
+}
+/* } Text Carousel Base Styles
 .text-swiper {
   position: relative;
   width: 100%;
@@ -1568,7 +1569,7 @@
   .text-swiper {
     padding: 30px 10px;
   }
-}
+} */
 
 .u-text-heading {
   font-weight: 1000;

@@ -1268,7 +1268,7 @@
   }
 } .u-section-8 {
   background-image: none;
-  min-height: 1162px;
+  min-height: 1000px;
 }
 
 .u-section-8 .u-shape-1 {
@@ -1568,4 +1568,20 @@
   .text-swiper {
     padding: 30px 10px;
   }
+}
+
+.u-text-heading {
+  font-weight: 1000;
+  font-size: 8rem;
+  margin: auto;
+  --animation-custom_in-translate_x: 0px;
+  --animation-custom_in-translate_y: 300px;
+  --animation-custom_in-opacity: 0;
+  --animation-custom_in-rotate: 0deg;
+  --animation-custom_in-scale: 1;
+}
+
+.u-green-10 {
+  color: #111111;
+  background-color: #d2ddc4;
 }

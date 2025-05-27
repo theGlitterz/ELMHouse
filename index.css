@@ -832,7 +832,7 @@
     font-size: 1.5rem;
   }
 } .u-section-4 {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/fgfgfg.jpg');
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/whychooseusbg.jpg');
   background-position: 50% 50%;
 }
 
@@ -857,8 +857,9 @@
 
 .u-section-4 .u-text-1 {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 500;
   margin: 0;
+  text-align: left;
 }
 
 .u-section-4 .u-text-2 {
@@ -912,7 +913,7 @@
 }
 
 .u-section-4 .u-text-4 {
-  font-style: italic;
+ text-align: left;
   font-size: 1rem;
   margin: 20px 0 0;
 }
@@ -1527,15 +1528,19 @@
 .u-section-7 .u-list-1 {
   grid-template-rows: repeat(1, auto);
   width: 558px;
-  margin: -755px auto 0 0;
+  margin: -580px auto 0 0;
 }
 
 .u-section-7 .u-repeater-1 {
+  display: grid;
   grid-template-columns: repeat(2, calc(50% - 12.5px));
-  min-height: 565px;
-  --gap: 25px;
-  grid-auto-columns: calc(50% - 12.5px);
+  grid-gap: 25px;
+  /* Remove or override the height */
+  height: auto;
+  min-height: auto; /* remove this if it's set */
+  align-items: start; /* make sure grid items align to top */
 }
+
 
 .u-section-7 .u-list-item-1 {
   --animation-custom_in-translate_x: 0px;

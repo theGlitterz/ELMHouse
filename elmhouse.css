@@ -44148,8 +44148,10 @@ a.u-link.u-text-hover-grey-90:hover {
         {
         margin-top: 20px;
         margin-bottom: 20px;
-        font-size: 1.125rem;
+        font-size: 2rem;
         line-height: 2.0;
+        text-align: left;
+        font-weight: 500;
         }
         .u-btn
         {
@@ -44970,3 +44972,29 @@ a.u-link.u-text-hover-grey-90:hover {
 #sec-6df1 {
   background-color: #556046;
 }
+.u-green-10,
+.u-body.u-green-10,
+section.u-green-10:before,
+.u-green-10 > .u-audio-main-layout-wrapper:before,
+.u-green-10 > .u-container-layout:before,
+.u-green-10 > .u-inner-container-layout:before,
+.u-green-10.u-sidenav:before,
+.u-container-layout.u-container-layout.u-green-10:before,
+.u-table-alt-green-10 tr:nth-child(even) {
+  color: #111111;
+  background-color: #d2ddc4;
+}
+
+.u-text-green-40,
+.u-input.u-text-green-40,
+.u-input.u-text-green-40[class*="u-border-"],
+li.active > a.u-button-style.u-text-green-40,
+li.active > a.u-button-style.u-text-green-40[class*="u-border-"],
+a.u-button-style.u-text-green-40,
+a.u-button-style.u-text-green-40[class*="u-border-"] {
+  color: #556046 !important;
+  
+  
+  
+}
+

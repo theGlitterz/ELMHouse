@@ -15553,6 +15553,7 @@ div.u-video,
 }
 .u-menu.u-menu-hamburger .u-nav-container {
   display: none;
+   margin-left: auto;
 }
 .u-menu-mega .u-nav-container .u-mega-popup .u-nav {
   display: block;
@@ -45003,4 +45004,16 @@ a.u-button-style.u-text-green-40[class*="u-border-"] {
   margin-right: 0;
   display: flex;
   justify-content: flex-end;
+}
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+@media (max-width: 768px) {
+  .header-wrapper {
+    flex-direction: row;
+  }
 }

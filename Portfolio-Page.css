@@ -1401,6 +1401,14 @@
   transform: scale(1.05);
 }
 
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px; /* Space between items */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .bg-image {
   position: absolute;
   top: 0;
@@ -1414,6 +1422,82 @@
 .overlay-text {
   position: relative;
   z-index: 1;
+}
+
+/* Slider Styles for Enlarged Images */
+.slider-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+.slider-container.active {
+    display: flex;
+}
+.slider {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    text-align: center;
+}
+.slider img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 8px;
+    object-fit: contain;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    user-select: none;
+}
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}
+.close-slider {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* View More Button Styles */
+.view-more-container {
+    text-align: center;
+    margin-top: 20px;
+}
+.view-more-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.view-more-btn:hover {
+    background-color: #0056b3;
+}
+.view-more-btn.hidden {
+    display: none;
 }
 
 @media (max-width: 1199px) {

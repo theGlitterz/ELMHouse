@@ -80,7 +80,7 @@
         <div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">
            
-            <div class="gallery" id="gallery">
+            <div class="gallery" id="gallery"></div>
 
             <!-- Slider container for enlarged images -->
             <div class="slider-container" id="sliderContainer">
@@ -92,31 +92,6 @@
                 </div>
             </div>
 
-
-
-
-
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-            <!-- This is the main element for the gallery, above added part is only for testing -->
-
-            <!-- <div class="gallery" id="gallery"></div> -->
           </div>
         </div>
         <!-- <a href="#" class="u-active-palette-4-dark-2 u-align-center u-border-2 u-border-active-palette-4-dark-2 u-border-hover-palette-4-dark-2 u-border-palette-4-dark-2 u-btn u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-hover-palette-4-dark-2 u-text-active-white u-text-black u-text-hover-white u-btn-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="1000" data-animation-direction="">Learn more</a> -->
@@ -200,19 +175,6 @@
     <div id="footer"></div>
 
     <!-- <section class="u-backlink u-clearfix u-grey-80"></section> -->
-
-    <script>
-      fetch('Components/navbar.html')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('navbar').innerHTML = data;
-      });
-      fetch('Components/footer.html')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('footer').innerHTML = data;
-      });
-    </script>
 
     <script>
       let galleryData = [];
@@ -304,6 +266,17 @@
           if (e.target === document.getElementById('sliderContainer')) {
               document.getElementById('sliderContainer').classList.remove('active');
           }
+      });
+
+      fetch('Components/navbar.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+      });
+      fetch('Components/footer.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('footer').innerHTML = data;
       });
 
       // Load the gallery when the page loads

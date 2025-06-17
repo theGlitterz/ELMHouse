@@ -375,15 +375,15 @@
                   <textarea placeholder="Enter your message" rows="4" cols="50" id="message-5a14" name="message" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle" required=""></textarea>
                   </div>
                   <div class="u-align-center u-form-group u-form-submit">
-                <a href="#" id="customSubmitBtn" class="u-active-grey-90 u-border-none u-btn u-btn-submit u-button-style u-hover-grey-90 u-palette-4-dark-2 u-text-active-white u-text-hover-white u-btn-1">
-  Submit
-</a>
-<input type="submit" value="submit" class="u-form-control-hidden">
+                    <a href="#" id="customSubmitBtn" class="u-active-grey-90 u-border-none u-btn u-btn-submit u-button-style u-hover-grey-90 u-palette-4-dark-2 u-text-active-white u-text-hover-white u-btn-1">
+                      Submit
+                    </a>
+                    <input type="submit" value="submit" class="u-form-control-hidden">
 
  
                   </div>
-                  <div class="u-form-send-message u-form-send-success">Thank you! Your message has been sent.</div>
-                  <div class="u-form-send-error u-form-send-message">Unable to send your message. Please fix errors then try again.</div>
+                  <div class="u-form-send-message u-form-send-success-contactus">Thank you! Your message has been sent.</div>
+                  <div class="u-form-send-error-contactus u-form-send-message">Unable to send your message. Please fix errors then try again.</div>
            
               </form>
               </div>
@@ -396,6 +396,10 @@
     <div id="footer"></div>
 
     <section class="u-backlink u-clearfix u-grey-80"></section>
+
+    <a href="https://wa.me/353860796566" class="whatsapp-float" target="_blank" rel="noopener">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="WhatsApp" />
+    </a>
 
     <script>
       fetch('Components/navbar.html')
@@ -425,70 +429,60 @@
           },
         });
       });
-    </script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form.u-inner-form");
+        const successMsg = document.querySelector(".u-form-send-success-contactus");
+        const errorMsg = document.querySelector(".u-form-send-error-contactus");
+        const submitBtn = document.getElementById("customSubmitBtn");
 
-<a href="https://wa.me/353860796566" class="whatsapp-float" target="_blank" rel="noopener">
-  <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="WhatsApp" />
+        submitBtn.addEventListener("click", function (e) {
+          e.preventDefault(); // Prevent <a href="#"> from jumping to top
 
-</a>
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector("form.u-inner-form");
-  const successMsg = document.querySelector(".u-form-send-success");
-  const errorMsg = document.querySelector(".u-form-send-error");
-  const submitBtn = document.getElementById("customSubmitBtn");
+          // Get field values
+          const name = form.name.value.trim();
+          const email = form.email.value.trim();
+          const message = form.message.value.trim();
 
-  submitBtn.addEventListener("click", function (e) {
-    e.preventDefault(); // Prevent <a href="#"> from jumping to top
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Get field values
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
+          // Reset messages
+          successMsg.style.display = "none";
+          errorMsg.style.display = "none";
+          errorMsg.textContent = "";
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          // Validate
+          if (!name || !email || !message) {
+            errorMsg.textContent = "Please fill in all fields.";
+            errorMsg.style.display = "block";
+            return;
+          }
 
-    // Reset messages
-    successMsg.style.display = "none";
-    errorMsg.style.display = "none";
-    errorMsg.textContent = "";
+          if (!emailPattern.test(email)) {
+            errorMsg.textContent = "Please enter a valid email address.";
+            errorMsg.style.display = "block";
+            return;
+          }
 
-    // Validate
-    if (!name || !email || !message) {
-      errorMsg.textContent = "Please fill in all fields.";
-      errorMsg.style.display = "block";
-      return;
-    }
+          // Submit form manually
+          const formData = new FormData(form);
 
-    if (!emailPattern.test(email)) {
-      errorMsg.textContent = "Please enter a valid email address.";
-      errorMsg.style.display = "block";
-      return;
-    }
-
-    // Submit form manually
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => {
-        if (response.ok) {
-          form.reset();
-          successMsg.style.display = "block";
-        } else {
-          throw new Error("Server error");
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-        errorMsg.textContent = "Unable to send your message. Please try again.";
-        errorMsg.style.display = "block";
+          fetch(form.action, {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => {
+              if (response.ok) {
+                form.reset();
+                successMsg.style.display = "block";
+              } else {
+                console.error(error);
+                errorMsg.textContent = "Unable to send your message. Please try again.";
+                errorMsg.style.display = "block";
+              }
+            });
+        });
       });
-  });
-});
-</script>
+    </script>
 
 
 </body></html>

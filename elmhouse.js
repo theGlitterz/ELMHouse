@@ -1,4 +1,72 @@
-!(function (t) {
+fetch('Components/header.html')
+.then(res => res.text())
+.then(data => {
+    document.getElementById('header').innerHTML = data;
+});
+fetch('Components/footer.html')
+.then(res => res.text())
+.then(data => {
+    document.getElementById('footer').innerHTML = data;
+});
+fetch('Components/contactUsForm.html')
+.then(res => res.text())
+.then(data => {
+    document.getElementById('contactUs').innerHTML = data;
+});
+document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form.u-inner-form");
+        const successMsg = document.querySelector(".u-form-send-success-contactus");
+        const errorMsg = document.querySelector(".u-form-send-error-contactus");
+        const submitBtn = document.getElementById("customSubmitBtn");
+
+        submitBtn.addEventListener("click", function (e) {
+          e.preventDefault(); // Prevent <a href="#"> from jumping to top
+
+          // Get field values
+          const name = form.name.value.trim();
+          const email = form.email.value.trim();
+          const message = form.message.value.trim();
+
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          // Reset messages
+          successMsg.style.display = "none";
+          errorMsg.style.display = "none";
+          errorMsg.textContent = "";
+
+          // Validate
+          if (!name || !email || !message) {
+            errorMsg.textContent = "Please fill in all fields.";
+            errorMsg.style.display = "block";
+            return;
+          }
+
+          if (!emailPattern.test(email)) {
+            errorMsg.textContent = "Please enter a valid email address.";
+            errorMsg.style.display = "block";
+            return;
+          }
+
+          // Submit form manually
+          const formData = new FormData(form);
+
+          fetch(form.action, {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => {
+              if (response.ok) {
+                form.reset();
+                successMsg.style.display = "block";
+              } else {
+                console.error(error);
+                errorMsg.textContent = "Unable to send your message. Please try again.";
+                errorMsg.style.display = "block";
+              }
+            });
+        });
+      });
+      !(function (t) {
     function e(i) {
         if (n[i]) return n[i].exports;
         var o = (n[i] = { i: i, l: false, exports: {} });

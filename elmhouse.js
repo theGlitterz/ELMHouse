@@ -8,11 +8,6 @@ fetch('Components/footer.html')
 .then(data => {
     document.getElementById('footer').innerHTML = data;
 });
-fetch('Components/contactUsForm.html')
-.then(res => res.text())
-.then(data => {
-    document.getElementById('contactUs').innerHTML = data;
-});
 document.addEventListener("DOMContentLoaded", function () {
         const form = document.querySelector("form.u-inner-form");
         const successMsg = document.querySelector(".u-form-send-success-contactus");

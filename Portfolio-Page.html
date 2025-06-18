@@ -58,6 +58,14 @@
     <section class="u-align-center u-clearfix u-container-align-center u-white u-section-2" id="carousel_e790">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <h2 class="u-align-center u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500"> Our Previous Creations</h2>
+
+            <!-- Divider buttons -->
+          <div class="divider-container">
+            <button class="divider-btn active" data-file="GalleryContent/Service-01.json" id="divider1">Category 1</button>
+            <button class="divider-btn" data-file="GalleryContent/Service-02.json" id="divider2">Category 2</button>
+            <button class="divider-btn" data-file="GalleryContent/Service-03.json" id="divider3">Category 3</button>
+            <button class="divider-btn" data-file="GalleryContent/Service-04.json" id="divider4">Category 4</button>
+          </div>
            
         <div class="gallery" id="gallery"></div>
 
@@ -81,144 +89,153 @@
 
     <!-- <section class="u-backlink u-clearfix u-grey-80"></section> -->
 
-    <script>
-      let galleryData = [];
-      let currentIndex = 0;
-      let displayedItems = 0;
-      const itemsPerLoad = 24;
+<script>
+  let galleryData = [];
+  let currentIndex = 0;
+  let displayedItems = 0;
+  const itemsPerLoad = 24;
 
-      // Function to create a gallery item
-      function createGalleryItem(item, index) {
-        const galleryItem = document.createElement('div');
-        galleryItem.classList.add('u-align-left', 'u-container-align-center', 'u-container-style', 'u-image', 'u-list-item', 'u-repeater-item', 'u-shape-rectangle', 'u-gallery-image');
-        galleryItem.dataset.index = index;
+  // Function to create a gallery item
+  function createGalleryItem(item, index) {
+    const galleryItem = document.createElement('div');
+    galleryItem.classList.add('u-align-left', 'u-container-align-center', 'u-container-style', 'u-image', 'u-list-item', 'u-repeater-item', 'u-shape-rectangle', 'u-gallery-image');
+    galleryItem.dataset.index = index;
 
-        const img = document.createElement('img');
-        img.src = item.imageUrl;
-        img.alt = item.title;
-        img.classList.add('bg-image');
+    const img = document.createElement('img');
+    img.src = item.imageUrl;
+    img.alt = item.title;
+    img.classList.add('bg-image');
 
-        const containerLayout = document.createElement('div');
-        containerLayout.classList.add('u-container-layout', 'u-similar-container', 'u-valign-bottom', 'u-container-layout-3');
-        galleryItem.appendChild(containerLayout);
+    const containerLayout = document.createElement('div');
+    containerLayout.classList.add('u-container-layout', 'u-similar-container', 'u-valign-bottom', 'u-container-layout-3');
+    galleryItem.appendChild(containerLayout);
 
-        const overlayText = document.createElement('div');
-        overlayText.classList.add('u-black', 'u-container-style', 'u-expanded-width', 'u-group', 'u-opacity', 'u-opacity-40', 'u-group-2', 'overlay-text');
-        
-        const textLayout = document.createElement('div');
-        textLayout.classList.add('u-container-layout', 'u-valign-middle', 'u-container-layout-4');
+    const overlayText = document.createElement('div');
+    overlayText.classList.add('u-black', 'u-container-style', 'u-expanded-width', 'u-group', 'u-opacity', 'u-opacity-40', 'u-group-2', 'overlay-text');
+    
+    const textLayout = document.createElement('div');
+    textLayout.classList.add('u-container-layout', 'u-valign-middle', 'u-container-layout-4');
 
-        const title = document.createElement('h5');
-        title.classList.add('u-align-center', 'u-text', 'u-text-5');
-        title.textContent = item.title;
+    const title = document.createElement('h5');
+    title.classList.add('u-align-center', 'u-text', 'u-text-5');
+    title.textContent = item.title;
 
-        const description = document.createElement('h6');
-        description.classList.add('u-align-center', 'u-text', 'u-text-6');
-        description.textContent = item.description || 'Sample Headline'; // Fallback if description is missing
+    const description = document.createElement('h6');
+    description.classList.add('u-align-center', 'u-text', 'u-text-6');
+    description.textContent = item.description || 'Sample Headline';
 
-        textLayout.appendChild(title);
-        textLayout.appendChild(description);
-        overlayText.appendChild(textLayout);
-        containerLayout.appendChild(overlayText);
-        galleryItem.appendChild(img);
-        galleryItem.appendChild(containerLayout);
+    textLayout.appendChild(title);
+    textLayout.appendChild(description);
+    overlayText.appendChild(textLayout);
+    containerLayout.appendChild(overlayText);
+    galleryItem.appendChild(img);
+    galleryItem.appendChild(containerLayout);
 
-        // Add click event to open slider
-        galleryItem.addEventListener('click', () => {
-            currentIndex = index;
-            updateSlider();
-            document.getElementById('sliderContainer').classList.add('active');
-        });
+    // Add click event to open slider
+    galleryItem.addEventListener('click', () => {
+      currentIndex = index;
+      updateSlider();
+      document.getElementById('sliderContainer').classList.add('active');
+    });
 
-        return galleryItem;
-      }
+    return galleryItem;
+  }
 
-      // Function to load gallery items
-      function loadGalleryItems(startIndex, endIndex) {
-        const gallery = document.getElementById('gallery');
-        const viewMoreBtn = document.getElementById('viewMoreBtn');
+  // Function to load gallery items
+  function loadGalleryItems(startIndex, endIndex) {
+    const gallery = document.getElementById('gallery');
+    const viewMoreBtn = document.getElementById('viewMoreBtn');
 
-        for (let i = startIndex; i < endIndex && i < galleryData.length; i++) {
-            const item = galleryData[i];
-            const galleryItem = createGalleryItem(item, i);
-            gallery.appendChild(galleryItem);
-            displayedItems++;
-        }
+    for (let i = startIndex; i < endIndex && i < galleryData.length; i++) {
+      const item = galleryData[i];
+      const galleryItem = createGalleryItem(item, i);
+      gallery.appendChild(galleryItem);
+      displayedItems++;
+    }
 
-        // Show or hide "View More" button based on remaining items
-        if (displayedItems < galleryData.length) {
-            viewMoreBtn.classList.remove('hidden');
-        } else {
-            viewMoreBtn.classList.add('hidden');
-        }
-      }
+    // Show or hide "View More" button
+    if (displayedItems < galleryData.length) {
+      viewMoreBtn.classList.remove('hidden');
+    } else {
+      viewMoreBtn.classList.add('hidden');
+    }
+  }
 
-      // Function to fetch JSON data and load initial gallery items
-      async function loadGallery() {
-        try {
-            const response = await fetch('GalleryContent/Service-04.json');
-            galleryData = await response.json();
+  // Function to clear gallery
+  function clearGallery() {
+    const gallery = document.getElementById('gallery');
+    gallery.innerHTML = '';
+    displayedItems = 0;
+  }
 
-            // Load initial 24 items (or less if data has fewer items)
-            loadGalleryItems(0, itemsPerLoad);
-        } catch (error) {
-            console.error('Error loading gallery data:', error);
-        }
-      }
+  // Function to fetch JSON data and load gallery
+  async function loadGallery(filePath) {
+    try {
+      const response = await fetch(filePath);
+      galleryData = await response.json();
+      clearGallery();
+      loadGalleryItems(0, itemsPerLoad);
+    } catch (error) {
+      console.error('Error loading gallery data:', error);
+    }
+  }
 
-      // Function to load more items when "View More" is clicked
-      function loadMore() {
-        const startIndex = displayedItems;
-        const endIndex = startIndex + itemsPerLoad;
-        loadGalleryItems(startIndex, endIndex);
-      }
+  // Function to load more items
+  function loadMore() {
+    const startIndex = displayedItems;
+    const endIndex = startIndex + itemsPerLoad;
+    loadGalleryItems(startIndex, endIndex);
+  }
 
-      // Function to update slider content
-      function updateSlider() {
-        const item = galleryData[currentIndex];
-        document.getElementById('sliderImage').src = item.imageUrl;
-        document.getElementById('sliderImage').alt = item.title;
-      }
+  // Function to update slider content
+  function updateSlider() {
+    const item = galleryData[currentIndex];
+    document.getElementById('sliderImage').src = item.imageUrl;
+    document.getElementById('sliderImage').alt = item.title;
+  }
 
-      // Slider navigation
-      document.getElementById('prev').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + galleryData.length) % galleryData.length;
-        updateSlider();
-      });
+  // Slider navigation
+  document.getElementById('prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + galleryData.length) % galleryData.length;
+    updateSlider();
+  });
 
-      document.getElementById('next').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % galleryData.length;
-        updateSlider();
-      });
+  document.getElementById('next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % galleryData.length;
+    updateSlider();
+  });
 
-      // Close slider
-      document.getElementById('closeSlider').addEventListener('click', () => {
-        document.getElementById('sliderContainer').classList.remove('active');
-      });
+  // Close slider
+  document.getElementById('closeSlider').addEventListener('click', () => {
+    document.getElementById('sliderContainer').classList.remove('active');
+  });
 
-      // Close slider when clicking outside the image
-      document.getElementById('sliderContainer').addEventListener('click', (e) => {
-        if (e.target === document.getElementById('sliderContainer')) {
-            document.getElementById('sliderContainer').classList.remove('active');
-        }
-      });
+  // Close slider when clicking outside
+  document.getElementById('sliderContainer').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('sliderContainer')) {
+      document.getElementById('sliderContainer').classList.remove('active');
+    }
+  });
 
-      // Add event listener for "View More" button
-      document.getElementById('viewMoreBtn').addEventListener('click', loadMore);
+  // Add event listener for "View More" button
+  document.getElementById('viewMoreBtn').addEventListener('click', loadMore);
 
-      fetch('Components/navbar.html')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('navbar').innerHTML = data;
-      });
-      fetch('Components/footer.html')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('footer').innerHTML = data;
-      });
+  // Add event listeners for divider buttons
+  const dividerButtons = document.querySelectorAll('.divider-btn');
+  dividerButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons
+      dividerButtons.forEach(btn => btn.classList.remove('active'));
+      // Add active class to clicked button
+      button.classList.add('active');
+      // Load data from the corresponding file
+      const filePath = button.dataset.file;
+      loadGallery(filePath);
+    });
+  });
 
-      // Load the gallery when the page loads
-      window.onload = loadGallery;
-    </script>
+  // Load the first category by default
+  window.onload = () => loadGallery('GalleryContent/Service-01.json');
+</script>
   
 </body></html>

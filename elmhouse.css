@@ -44428,7 +44428,7 @@ a.u-link.u-text-hover-grey-90:hover {
   font-size: 1rem;
   height: auto;
   width: auto;
-  max-width: 200px; /* or 180px if needed */
+  max-width: 220px; /* or 180px if needed */
   display: block;
 }
 
@@ -45398,7 +45398,7 @@ background: rgba(0, 0, 0, 0.6);
 }
 @media (max-width: 767px) {
   .u-header .u-logo-image-1 {
-    max-width: 140px;
+    max-width: 170px;
   }
 
   .u-image.u-logo {
@@ -45420,5 +45420,12 @@ background: rgba(0, 0, 0, 0.6);
 @media (max-width: 480px) {
   .mobile-menu {
     margin-right: 12px; /* Add breathing room so it doesn’t get cut off */
+  }
+}
+
+@media (max-width: 480px) {
+  .header-flex-container {
+    padding-right: 16px;
+    padding-left: 16px;
   }
 }

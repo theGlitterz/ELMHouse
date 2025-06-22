@@ -45396,3 +45396,29 @@ background: rgba(0, 0, 0, 0.6);
   z-index: 1000;
   margin-left: auto;
 }
+@media (max-width: 767px) {
+  .u-header .u-logo-image-1 {
+    max-width: 140px;
+  }
+
+  .u-image.u-logo {
+    max-width: 150px;
+    flex-shrink: 0;
+  }
+
+  .header-flex-container {
+    flex-wrap: nowrap;
+  }
+}
+@media (max-width: 767px) {
+  .u-logo {
+    margin: 0;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-menu {
+    margin-right: 12px; /* Add breathing room so it doesn’t get cut off */
+  }
+}

@@ -1735,3 +1735,28 @@
     background: white;
   }
 }
+@media (max-width: 768px) {
+  #carousel_ff86 .u-image-2 {
+    width: 120% !important;
+    margin-top: -80px; /* adjust to control overlap */
+    z-index: 1;
+    position: relative;
+  }
+
+  #carousel_ff86 .u-layout-cell-3 {
+    z-index: 1;
+  }
+
+  #carousel_ff86 .u-layout-cell-1 {
+    position: relative;
+    z-index: 2;
+    background: white; /* Ensure text sits above */
+    padding-top: 60px; /* optional spacing */
+  }
+}
+@media (max-width: 768px) {
+  #carousel_ff86 .u-layout-col {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

@@ -45255,8 +45255,8 @@ a.u-button-style.u-text-green-40[class*="u-border-"] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 25px;
-  flex-wrap: nowrap;
+  padding: 15px 32px;
+  flex-wrap: wrap;
 }
 
 /* Desktop CTA menu */
@@ -45386,4 +45386,8 @@ fill: white;}
 /* Only show overlay when menu is active */
 .hamburger-toggle:checked ~ .mobile-menu-overlay {
   display: block;
+}
+.mobile-menu {
+  position: relative;
+  z-index: 1000;
 }

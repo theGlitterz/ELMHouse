@@ -45380,7 +45380,7 @@ fill: white;}
   width: 100vw;
   height: 100vh;
   z-index: 998; /* just below the ribbon panel */
-  background: transparent;
+background: rgba(0, 0, 0, 0.6);
 }
 
 /* Only show overlay when menu is active */

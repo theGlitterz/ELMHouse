@@ -1708,3 +1708,30 @@
     margin-bottom: 60px;
   }
 }
+
+/* === Fix testimonial layout on mobile === */
+@media (max-width: 768px) {
+  .u-section-8 .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .u-section-8 .u-image-2 {
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* ⬆️ image is now on top */
+  }
+
+  .u-section-8 .u-group-1 {
+    position: relative;
+    z-index: 1; /* ⬇️ text block behind */
+    margin-top: 150px;
+    padding: 20px;
+    background: white;
+  }
+}

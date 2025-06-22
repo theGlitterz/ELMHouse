@@ -44427,9 +44427,11 @@ a.u-link.u-text-hover-grey-90:hover {
 .u-header .u-logo-image-1 {
   font-size: 1rem;
   height: auto;
-  width: 250px;
+  width: auto;
+  max-width: 200px; /* or 180px if needed */
   display: block;
 }
+
 
 .u-header .u-social-icons-1 {
   white-space: nowrap;
@@ -45256,8 +45258,10 @@ a.u-button-style.u-text-green-40[class*="u-border-"] {
   align-items: center;
   justify-content: space-between;
   padding: 15px 32px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  gap: 10px; /* optional: adds breathing space between items if they wrap */
 }
+
 
 /* Desktop CTA menu */
 .desktop-cta-nav {
@@ -45390,4 +45394,5 @@ background: rgba(0, 0, 0, 0.6);
 .mobile-menu {
   position: relative;
   z-index: 1000;
+  margin-left: auto;
 }

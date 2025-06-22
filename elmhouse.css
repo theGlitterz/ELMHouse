@@ -45334,8 +45334,8 @@ fill: white;}
 }
 .u-header .hamburger-icon svg {
   fill: white;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   display: block;
 }
 .mobile-menu-panel .u-nav-link {
@@ -45419,13 +45419,15 @@ background: rgba(0, 0, 0, 0.6);
 
 @media (max-width: 480px) {
   .mobile-menu {
-    margin-right: 12px; /* Add breathing room so it doesn’t get cut off */
+    margin-right: 8px;     /* Slightly reduce right margin */
+    position: relative;
+    right: 0; /* Add breathing room so it doesn’t get cut off */
   }
 }
 
 @media (max-width: 480px) {
   .header-flex-container {
-    padding-right: 16px;
-    padding-left: 16px;
+    padding-right: 12px;
+    padding-left: 12px;
   }
 }

@@ -10,12 +10,6 @@
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="elmhouse.js" defer=""></script>
     <meta name="referrer" content="origin">
-    
-    
-    
-    
-    
-    
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
     <script type="application/ld+json">{
@@ -28,7 +22,10 @@
     <meta name="theme-color" content="#b4bd9b">
     <meta property="og:title" content="Portfolio Page">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <meta data-intl-tel-input-cdn-path="intlTelInput/">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+</head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en">
     
     <div id="header"></div>
@@ -55,187 +52,164 @@
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-white u-section-2" id="carousel_e790">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500"> Our Previous Creations</h2>
 
-            <!-- Divider buttons -->
-          <div class="divider-container">
-            <button class="divider-btn active" data-file="GalleryContent/Service-01.json" id="divider1">Category 1</button>
-            <button class="divider-btn" data-file="GalleryContent/Service-02.json" id="divider2">Category 2</button>
-            <button class="divider-btn" data-file="GalleryContent/Service-03.json" id="divider3">Category 3</button>
-            <button class="divider-btn" data-file="GalleryContent/Service-04.json" id="divider4">Category 4</button>
-          </div>
-           
-        <div class="gallery" id="gallery"></div>
+   <section class="portfolio-section">
+   <h1 class="u-align-left u-text u-text-1 u-align-center"> Our previous work </h1>
+    <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="interior">Interior</button>
+    <button class="filter-btn" data-filter="exterior">Exterior</button>
+    <button class="filter-btn" data-filter="renovation">Renovation</button>
+    <button class="filter-btn" data-filter="custom">Custom</button>
+    </div>
 
-        <div class="view-more-container">
-          <a class="u-active-palette-4-dark-2 u-align-center u-border-2 u-border-active-palette-4-dark-2 u-border-hover-palette-4-dark-2 u-border-palette-4-dark-2 u-btn u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-hover-palette-4-dark-2 u-text-active-white u-text-black u-text-hover-white u-btn-2 view-more-btn hidden" id="viewMoreBtn" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View More</a>
-        </div>
+    <div class="portfolio-gallery" id="portfolio-gallery">
+    <!-- Images will be injected here -->
+    </div>
 
-        <!-- Slider container for enlarged images -->
-        <div class="slider-container" id="sliderContainer">
-            <span class="close-slider" id="closeSlider">×</span>
-            <div class="slider" id="slider">
-                <div class="prev" id="prev">❮</div>
-                <img id="sliderImage" src="" alt="Enlarged Image">
-                <div class="next" id="next">❯</div>
-            </div>
-        </div>
-      </div>
-    </section>
-    
+    <div class="pagination" id="pagination">
+    <!-- Pagination buttons go here -->
+   </div>
+  </section>
+ 
+   <!-- Modal for Enlarged Image -->
+<div id="image-modal" class="image-modal">
+  <span class="close-modal" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modal-image">
+  <span class="modal-prev" onclick="navigateModal(-1)">&#10094;</span>
+  <span class="modal-next" onclick="navigateModal(1)">&#10095;</span>
+</div>
+
     <div id="footer"></div>
 
     <!-- <section class="u-backlink u-clearfix u-grey-80"></section> -->
 
 <script>
-  let galleryData = [];
-  let currentIndex = 0;
-  let displayedItems = 0;
-  const itemsPerLoad = 24;
+  const gallery = document.getElementById("portfolio-gallery");
+  const pagination = document.getElementById("pagination");
+  const filterButtons = document.querySelectorAll(".filter-btn");
 
-  // Function to create a gallery item
-  function createGalleryItem(item, index) {
-    const galleryItem = document.createElement('div');
-    galleryItem.classList.add('u-align-left', 'u-container-align-center', 'u-container-style', 'u-image', 'u-list-item', 'u-repeater-item', 'u-shape-rectangle', 'u-gallery-image');
-    galleryItem.dataset.index = index;
+  const itemsPerPage = 24;
+  let currentFilter = "all";
+  let currentPage = 1;
+  let allImages = [];
 
-    const img = document.createElement('img');
-    img.src = item.imageUrl;
-    img.alt = item.title;
-    img.classList.add('bg-image');
-
-    const containerLayout = document.createElement('div');
-    containerLayout.classList.add('u-container-layout', 'u-similar-container', 'u-valign-bottom', 'u-container-layout-3');
-    galleryItem.appendChild(containerLayout);
-
-    const overlayText = document.createElement('div');
-    overlayText.classList.add('u-black', 'u-container-style', 'u-expanded-width', 'u-group', 'u-opacity', 'u-opacity-40', 'u-group-2', 'overlay-text');
-    
-    const textLayout = document.createElement('div');
-    textLayout.classList.add('u-container-layout', 'u-valign-middle', 'u-container-layout-4');
-
-    const title = document.createElement('h5');
-    title.classList.add('u-align-center', 'u-text', 'u-text-5');
-    title.textContent = item.title;
-
-    const description = document.createElement('h6');
-    description.classList.add('u-align-center', 'u-text', 'u-text-6');
-    description.textContent = item.description || 'Sample Headline';
-
-    textLayout.appendChild(title);
-    textLayout.appendChild(description);
-    overlayText.appendChild(textLayout);
-    containerLayout.appendChild(overlayText);
-    galleryItem.appendChild(img);
-    galleryItem.appendChild(containerLayout);
-
-    // Add click event to open slider
-    galleryItem.addEventListener('click', () => {
-      currentIndex = index;
-      updateSlider();
-      document.getElementById('sliderContainer').classList.add('active');
-    });
-
-    return galleryItem;
+  async function loadImages() {
+    const sources = [
+      "GalleryContent/Service-01.json",
+      "GalleryContent/Service-02.json",
+      "GalleryContent/Service-03.json",
+      "GalleryContent/Service-04.json"
+    ];
+    const requests = sources.map(src => fetch(src).then(res => res.json()));
+    const results = await Promise.all(requests);
+    allImages = results.flat();
+    renderGallery();
+    renderPagination();
   }
 
-  // Function to load gallery items
-  function loadGalleryItems(startIndex, endIndex) {
-    const gallery = document.getElementById('gallery');
-    const viewMoreBtn = document.getElementById('viewMoreBtn');
+  function renderGallery() {
+    const filtered = allImages.filter(img => currentFilter === "all" || img.category === currentFilter);
+    const start = (currentPage - 1) * itemsPerPage;
+    const imagesToShow = filtered.slice(start, start + itemsPerPage);
 
-    for (let i = startIndex; i < endIndex && i < galleryData.length; i++) {
-      const item = galleryData[i];
-      const galleryItem = createGalleryItem(item, i);
-      gallery.appendChild(galleryItem);
-      displayedItems++;
-    }
+    if (window.innerWidth <= 767) {
+  gallery.innerHTML = `
+    <div class="swiper-container mobile-gallery-swiper">
+      <div class="swiper-wrapper">
+        ${imagesToShow.map(img => `
+          <div class="swiper-slide">
+            <div class="portfolio-item">
+              <img src="${img.imageurl}" alt="${img.title || 'Portfolio Image'}">
+              <p class="portfolio-title">${img.title || ''}</p>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
 
-    // Show or hide "View More" button
-    if (displayedItems < galleryData.length) {
-      viewMoreBtn.classList.remove('hidden');
-    } else {
-      viewMoreBtn.classList.add('hidden');
-    }
+  new Swiper('.mobile-gallery-swiper', {
+    slidesPerView: 1.2,
+    spaceBetween: 16,
+    loop: false,
+  });
+} else {
+  gallery.innerHTML = imagesToShow.map(img => `
+    <div class="portfolio-item">
+      <img src="${img.imageurl}" alt="${img.title || 'Portfolio Image'}">
+      <p class="portfolio-title">${img.title || ''}</p>
+    </div>
+  `).join('');
+}
+
   }
 
-  // Function to clear gallery
-  function clearGallery() {
-    const gallery = document.getElementById('gallery');
-    gallery.innerHTML = '';
-    displayedItems = 0;
-  }
+  function renderPagination() {
+    const filtered = allImages.filter(img => currentFilter === "all" || img.category === currentFilter);
+    const totalPages = Math.ceil(filtered.length / itemsPerPage);
 
-  // Function to fetch JSON data and load gallery
-  async function loadGallery(filePath) {
-    try {
-      const response = await fetch(filePath);
-      galleryData = await response.json();
-      clearGallery();
-      loadGalleryItems(0, itemsPerLoad);
-    } catch (error) {
-      console.error('Error loading gallery data:', error);
+    pagination.innerHTML = "";
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = i;
+      btn.classList.add("page-btn");
+      if (i === currentPage) btn.classList.add("active");
+      btn.addEventListener("click", () => {
+        currentPage = i;
+        renderGallery();
+        renderPagination();
+      });
+      pagination.appendChild(btn);
     }
   }
 
-  // Function to load more items
-  function loadMore() {
-    const startIndex = displayedItems;
-    const endIndex = startIndex + itemsPerLoad;
-    loadGalleryItems(startIndex, endIndex);
-  }
-
-  // Function to update slider content
-  function updateSlider() {
-    const item = galleryData[currentIndex];
-    document.getElementById('sliderImage').src = item.imageUrl;
-    document.getElementById('sliderImage').alt = item.title;
-  }
-
-  // Slider navigation
-  document.getElementById('prev').addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + galleryData.length) % galleryData.length;
-    updateSlider();
-  });
-
-  document.getElementById('next').addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % galleryData.length;
-    updateSlider();
-  });
-
-  // Close slider
-  document.getElementById('closeSlider').addEventListener('click', () => {
-    document.getElementById('sliderContainer').classList.remove('active');
-  });
-
-  // Close slider when clicking outside
-  document.getElementById('sliderContainer').addEventListener('click', (e) => {
-    if (e.target === document.getElementById('sliderContainer')) {
-      document.getElementById('sliderContainer').classList.remove('active');
-    }
-  });
-
-  // Add event listener for "View More" button
-  document.getElementById('viewMoreBtn').addEventListener('click', loadMore);
-
-  // Add event listeners for divider buttons
-  const dividerButtons = document.querySelectorAll('.divider-btn');
-  dividerButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Remove active class from all buttons
-      dividerButtons.forEach(btn => btn.classList.remove('active'));
-      // Add active class to clicked button
-      button.classList.add('active');
-      // Load data from the corresponding file
-      const filePath = button.dataset.file;
-      loadGallery(filePath);
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentFilter = btn.dataset.filter;
+      currentPage = 1;
+      renderGallery();
+      renderPagination();
     });
   });
 
-  // Load the first category by default
-  window.onload = () => loadGallery('GalleryContent/Service-01.json');
+  loadImages();
+
+  // Image click to enlarge
+let currentImageIndex = 0;
+let currentImageList = [];
+
+gallery.addEventListener("click", (e) => {
+  if (e.target.tagName === "IMG") {
+    currentImageList = Array.from(gallery.querySelectorAll("img"));
+    currentImageIndex = currentImageList.indexOf(e.target);
+    showModalImage(currentImageList[currentImageIndex].src);
+  }
+});
+
+function showModalImage(src) {
+  const modal = document.getElementById("image-modal");
+  const modalImg = document.getElementById("modal-image");
+  modal.style.display = "flex";
+  modalImg.src = src;
+}
+
+function navigateModal(direction) {
+  currentImageIndex += direction;
+  if (currentImageIndex < 0) currentImageIndex = currentImageList.length - 1;
+  if (currentImageIndex >= currentImageList.length) currentImageIndex = 0;
+  showModalImage(currentImageList[currentImageIndex].src);
+}
+
+function closeModal() {
+  document.getElementById("image-modal").style.display = "none";
+}
+
+
 </script>
-  
+
+ <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+ 
 </body></html>

@@ -1,7 +1,82 @@
 [
-        {
-        "imageUrl": "images/Service 04/service04-03.jpg",
-        "title": "Interior Fit-Outs",
-        "description": "Wall Panelling"
-    }
+  {
+    "imageurl": "images/Gallery/service02/service02_1.jpg",
+    "category": "exterior",
+    "title": "Modern Living Room"
+  },
+  {
+    "imageurl": "images/Gallery/service02/service02_2.jpg",
+    "category": "exterior",
+    "title": "Cozy Bedroom"
+  },
+{
+    "imageurl": "images/Gallery/service02/service02_3.jpg",
+    "category": "exterior",
+    "title": "Cozy Bedroom"
+  },
+  {
+    "imageurl": "images/Gallery/service02/service02_4.jpg",
+    "category": "exterior",
+    "title": "Cozy Bedroom"
+  },
+  {
+    "imageurl": "images/Gallery/service02/service02_5.jpg",
+    "category": "exterior",
+    "title": "Cozy Bedroom"
+  },
+  {
+    "imageurl": "images/Gallery/service02/service02_6.jpg",
+    "category": "exterior",
+    "title": "Cozy Bedroom"
+  },
+  {
+    "imageurl": "images/Gallery/service02/service02_7.jpg",
+    "category": "exterior",
+    "title": "Cozy Bedroom"
+  },
+  {
+    "imageurl": "images/Gallery/service02/service02_8.jpg",
+    "category": "exterior",
+    "title": "Cozy Bedroom"
+  },
+  {
+    "imageurl": "images/Gallery/service02/service02_9.jpg",
+    "category": "exterior",
+    "title": "Cozy Bedroom"
+  },
+  {
+    "imageurl": "images/Gallery/service02/service02_10.jpg",
+    "category": "exterior",
+    "title": "Cozy Bedroom"
+  },
+  {
+    "imageurl": "images/Gallery/service02/service02_11.jpg",
+    "category": "exterior",
+    "title": "Cozy Bedroom"
+  },
+  {
+    "imageurl": "images/Gallery/service02/service02_12.jpg",
+    "category": "exterior",
+    "title": "Cozy Bedroom"
+  },
+  {
+    "imageurl": "images/Gallery/service02/service02_13.jpg",
+    "category": "exterior",
+    "title": "Cozy Bedroom"
+  },
+  {
+    "imageurl": "images/Gallery/service02/service02_14.jpg",
+    "category": "exterior",
+    "title": "Cozy Bedroom"
+  },
+  {
+    "imageurl": "images/Gallery/service02/service02_15.jpg",
+    "category": "exterior",
+    "title": "Cozy Bedroom"
+  },
+  {
+    "imageurl": "images/Gallery/service02/service02_16.jpg",
+    "category": "exterior",
+    "title": "Cozy Bedroom"
+  }
 ]

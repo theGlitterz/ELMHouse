@@ -1237,7 +1237,7 @@
 
 @media (max-width: 575px) {
    .u-section-8 {
-    min-height: 1057px;
+    min-height: 1020px;
   }
 
   .u-section-8 .u-shape-1 {
@@ -1721,9 +1721,10 @@
 
   .u-section-8 .u-image-2 {
     position: absolute;
-    top: 5rem;
+    top: 1rem;
     left: 50%;
-    transform: translateX(-50%);
+    width:70%;
+     transform: translateX(-50%);
     z-index: 2; /* ⬆️ image is now on top */
   }
 

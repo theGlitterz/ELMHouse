@@ -45430,4 +45430,50 @@ background: rgba(0, 0, 0, 0.6);
     padding-right: 12px;
     padding-left: 12px;
   }
+@media (min-width: 768px) {
+  #carousel_b9a8 .u-group-1 {
+    max-width: 550px;
+    padding: 30px 40px;
+    box-sizing: border-box;
+  }
+}
+@media (min-width: 768px) {
+  #carousel_b9a8 .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px; /* spacing between image and text block */
+    flex-direction: row; /* row layout for desktop */
+    padding: 40px 60px;
+    box-sizing: border-box;
+  }
+
+  #carousel_b9a8 .u-image-2 {
+    flex-shrink: 0;
+    max-width: 320px;
+    height: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  #carousel_b9a8 .u-group-1 {
+    max-width: 550px;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+  }
+
+  #carousel_b9a8 .u-shape-1,
+  #carousel_b9a8 .u-shape-2 {
+    display: none; /* Optional: hide background shapes if they interfere */
+  }
+}
+#carousel_b9a8 .u-text-1 {
+  text-align: left !important;
+}
+
+}
+#carousel_b9a8 .u-image-2 {
+  margin-top: 10px; /* adjust as needed */
 }

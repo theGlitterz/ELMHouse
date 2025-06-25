@@ -407,6 +407,25 @@
       });
     
     </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll("[data-animation-name]");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const el = entry.target;
+        if (entry.isIntersecting && !el.dataset.animated) {
+          el.classList.add(el.dataset.animationName); // Optional: if class-based animations
+          el.style.animationDuration = el.dataset.animationDuration + "ms";
+          el.style.animationName = el.dataset.animationName;
+          el.dataset.animated = "true"; // Mark as already animated
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+  });
+</script>
 
 
 </body></html>
